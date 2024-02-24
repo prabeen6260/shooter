@@ -7,9 +7,12 @@ let movingDown = false;
 let xpos = 300;
 let ypos = 300;
 let speed = 5;
+let attack;
+let attacks=[];
 
 function setup() {
   createCanvas(windowWidth,windowHeight);
+  //attack = new Attack(width/2+30,attack_height_pos);
 }
 
 function draw() {
@@ -44,6 +47,33 @@ function draw() {
 //        "\nmovingUp = " + movingUp + 
 //        "\nmovingDown = " + movingDown, 10, 10, width/2, height/2);
 
+for (let i=0;i<attacks.length;i++){
+  attacks[i].show();
+  attacks[i].move();
+  /*
+  for (let j=0;j<enemies.length;j++){
+      if (attacks[i].hits(enemies[j])){
+          enemies[j].health-=1;
+          if (enemies[j].health<1){
+              enemies[j].health = Math.random() * (enemies[j].MAX_HEALTH - enemies[j].MIN_HEALTH) + enemies[j].MIN_HEALTH;
+              
+              enemies[j].x = (2*Math.random() -1)*bgImage.x;
+              enemies[j].y = (2*Math.random() -1)*bgImage.y;
+              plyr.score++;
+              
+          } 
+          
+          attacks[i].evaporate();
+          
+          //let blood = new Blood(enemies[j].x-bgImage.x,enemies[j].y-bgImage.y);
+          //blood.init_image("assets/blood",8);
+          //blood_particles.push(blood)
+      }
+    
+  }
+  */
+}
+
 
 }
 
@@ -76,4 +106,8 @@ function keyReleased() {
         movingRight = false;
       }
 }
-﻿
+function mousePressed(){
+  console.log("mouse has preesss");
+  attack = new Attack(xpos,ypos, mouseX, mouseY, true);
+  attacks.push(attack);
+}
