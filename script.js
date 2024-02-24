@@ -15,7 +15,7 @@ function setup() {
 function draw() {
     push();
     translate(200,0);
-    image(map,0,0,width-400,height);
+    image(map,0,0,windowWidth-400,windowHeight);
     pop();
   //background(220);
 
@@ -38,11 +38,11 @@ function draw() {
   }
 
   // show boolean values onscreen for clarity
-  textSize(20);
-  text("movingRight = " + movingRight + 
-       "\nmovingLeft = " + movingLeft + 
-       "\nmovingUp = " + movingUp + 
-       "\nmovingDown = " + movingDown, 10, 10, width/2, height/2);
+//   textSize(20);
+//   text("movingRight = " + movingRight + 
+//        "\nmovingLeft = " + movingLeft + 
+//        "\nmovingUp = " + movingUp + 
+//        "\nmovingDown = " + movingDown, 10, 10, width/2, height/2);
 
 
 }
